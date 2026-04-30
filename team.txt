@@ -5,4 +5,4 @@ Netlify app: https://trello-fellows.netlify.app/
 Enoch Olayemi
 Christian Haroldsen
 Avery Jones
-Boston Wyatt
+Boston Wyatt.
