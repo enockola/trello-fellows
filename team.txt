@@ -1,0 +1,8 @@
+Team Trello Board: https://trello.com/b/Zv3cyrAj/setup-trellofellows
+
+Netlify app: https://trello-fellows.netlify.app/
+
+Enoch Olayemi
+Christian Haroldsen
+Avery Jones
+Boston Wyatt
