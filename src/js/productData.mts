@@ -1,4 +1,4 @@
-import type {Product} from "./types.mts"
+import type {Product} from "./types.mjs"
 function convertToJson(res:Response) {
   if (res.ok) {
     return res.json();
@@ -10,7 +10,7 @@ function convertToJson(res:Response) {
 export function getData(category = "tents") {
   return fetch(`../json/${category}.json`)
     .then(convertToJson)
-    .then((data) => data);
+    .then(function(data) { return data; });
 }
 
 export async function findProductById(id:string) {
