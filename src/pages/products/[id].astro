@@ -13,14 +13,11 @@ export async function getStaticPaths() {
 }
 type Props = CollectionEntry<"products">;
 
-
 // get the product data from the props to use in the template below. The actual data is in product.data
 const product = Astro.props;
 const title = product.data.name;
 ---
 <Layout>
-  <script src="../../js/product.ts"></script>
-  
     <!-- Product details will go here -->
     <section class="product-detail">
         <h3>{product.data.name}</h3>
@@ -45,4 +42,5 @@ const title = product.data.name;
           <button id="addToCart" data-id={product.data.id}>Add to Cart</button>
         </div>
       </section>
+      <script src="../../js/product.ts"></script>
 </Layout>
