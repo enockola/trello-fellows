@@ -1,4 +1,5 @@
 import type {Product} from "./types.mjs"
+
 function convertToJson(res:Response) {
   if (res.ok) {
     return res.json();
@@ -8,7 +9,8 @@ function convertToJson(res:Response) {
 }
 
 export function getData(category = "tents") {
-  return fetch(`../json/${category}.json`)
+  return fetch(`../../public/json/${category}.json`)
+  // return fetch(`../json/${category}.json`)
     .then(convertToJson)
     .then(function(data) { return data; });
 }
