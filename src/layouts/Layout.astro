@@ -9,12 +9,12 @@ let {title} = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sleep Outside | {title}</title>
-    <script type="module" src="js/main.ts"></script>
+    
   </head>
   <body>
     <header class="divider">
       <div class="logo">
-        <img src="../images/noun_Tent_2517.svg" alt="tent image for logo" />
+        <img src="/images/noun_Tent_2517.svg" alt="tent image for logo" />
         <a href="/index.html"> Sleep<span class="highlight">Outside</span></a>
       </div>
       <nav class="menu-right">
@@ -25,7 +25,7 @@ let {title} = Astro.props;
               aria-label="user management"
               title="User Management"
             >
-              <img src="../images/noun-hiker.svg" alt="user icon" />
+              <img src="/images/noun-hiker.svg" alt="user icon" />
             </button>
             <nav class="user__menu">
               <a href="#">Login</a>
@@ -73,5 +73,6 @@ let {title} = Astro.props;
 			</slot>
 		</main>
 			<footer>&copy;NOT a real business</footer>
+      <script> import "../js/main.ts"; </script>
   </body>
 </html>
