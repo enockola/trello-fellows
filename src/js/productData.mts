@@ -11,7 +11,7 @@ function convertToJson(res:Response) {
 }
 
 export function getData(category = "tents") {
-  return fetch(`../../public/json/${category}.json`)
+  return fetch(baseURL + `products?category=${category}`)
   // return fetch(`../json/${category}.json`)
     .then(convertToJson)
     .then(function(data) { return data; });
