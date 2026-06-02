@@ -296,3 +296,13 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
+.category-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  a {
+    height: 100px;
+    width: 100px;
+  }
+}
