@@ -1,3 +1,4 @@
-import { openUserMenu } from "./utils.mjs";
+import { openUserMenu, renderCartCount } from "./utils.mjs";
 
 openUserMenu(".user__button");
+renderCartCount();

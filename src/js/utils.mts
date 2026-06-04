@@ -55,3 +55,16 @@ export function getParam(param:string) {
   return value;
   
 }
+
+export function renderCartCount() {
+  const cartCountElement = document.querySelector('.cart-item-count');
+  const cartItems = getLocalStorage("so-cart");
+  if (cartCountElement) {
+    if (cartItems) {
+      cartCountElement.innerHTML = cartItems.length;
+    }
+    else {
+      cartCountElement.innerHTML = '0';
+    }
+  }
+}

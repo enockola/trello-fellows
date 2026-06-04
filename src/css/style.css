@@ -306,3 +306,15 @@ footer {
     width: 100px;
   }
 }
+
+.cart-item-count {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  margin: 0;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50px;
+  font-size: 15px;
+  padding: 5px;
+}
