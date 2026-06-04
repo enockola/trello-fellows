@@ -318,3 +318,24 @@ footer {
   font-size: 15px;
   padding: 5px;
 }
+
+@keyframes shimmy {
+  0% {
+
+  }
+  20% {
+
+  }
+  40% {
+
+  }
+  60% {
+
+  }
+  80% {
+
+  }
+  100% {
+    
+  }
+}
