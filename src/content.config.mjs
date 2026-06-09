@@ -8,7 +8,7 @@ import { defineCollection } from "astro:content";
 // load our product info from the tents.json file
 const products = defineCollection({
   loader: async () => {
-    const serverURL = import.meta.env.SERVER_URL || "";
+    const serverURL = import.meta.env.PUBLIC_SERVER_URL || "";
     const response = await fetch(`${serverURL}products?limit=200`);
     const data = await response.json();
     return data.results || data;
