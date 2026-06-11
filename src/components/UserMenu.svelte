@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { checkAuth, userStore, logout } from "../js/auth.svelte.ts";
 
   let visible = $state(false);
 
@@ -22,14 +23,14 @@
   }
 
   onMount(() => {
-    // 1. Add Listeners
     // if the user clicks outside the menu, scrolls the page, or hits the `esc` key close the menu.
     window.addEventListener("click", closeMenu);
     window.addEventListener("scroll", closeMenu);
     window.addEventListener("keydown", handleKeydown);
 
-    // 2. Return Cleanup Function
-    // Svelte runs this function automatically when the component unmounts
+    // setup auth
+    checkAuth();
+
     return () => {
       window.removeEventListener("click", closeMenu);
       window.removeEventListener("scroll", closeMenu);
@@ -39,6 +40,9 @@
 </script>
 
 <div class="user">
+  {#if userStore.isLoggedIn}
+    <p>{userStore.user.name}</p>
+  {/if}
   <button
     class="user__button"
     aria-label="user management"
@@ -47,11 +51,15 @@
   >
     <img src="/images/noun-hiker.svg" alt="user icon" />
   </button>
-  
+
   <nav class="user__menu" class:open={visible}>
-    <a href="#">Login</a>
-    <a href="#">Profile</a>
-    <a href="#">Orders</a>
+    {#if !userStore.isLoggedIn}
+      <a href="/login/">Login</a>
+    {:else}
+      <a href="/profile/">Profile</a>
+      <a href="#">Orders</a>
+      <button onclick={logout} class="link-style-button">Logout</button>
+    {/if}
   </nav>
 </div>
 
