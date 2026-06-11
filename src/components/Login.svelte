@@ -1,26 +1,35 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import { login, userStore } from "../js/auth.svelte.ts";
-  import { setLocalStorage } from "../js/utils.mts";
+  import { getParam } from "../js/utils.mts";
 
   let {
     onSuccess = (path) => {
       window.location.href = path;
     }
   } = $props<{
-    onSuccess?: (data: { email: string }) => void;
+    onSuccess?: (path: string) => void;
   }>();
 
   let email = $state("test@test.com");
   let password = $state("");
   let errorMessage = $state("");
-  let redirectPath = "/";
+  let redirectPath = $state("/");
+
+  onMount(() => {
+    // Smart redirect check
+    const param = getParam("redirect");
+    if (param) {
+      redirectPath = param;
+    } else if (document.referrer && document.referrer !== window.location.href) {
+      redirectPath = document.referrer;
+    }
+  });
 
   async function loginHandler(event: Event) {
     event.preventDefault();
-    // Handle login logic here
     try {
       const results = await login(email, password);
-
       onSuccess(redirectPath);
     } catch (error: any) {
       console.log(error);
