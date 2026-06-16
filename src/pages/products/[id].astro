@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { type CollectionEntry, getCollection } from "astro:content";
+import type { Product } from "../../js/types.mts";
 
 // map though all products to create a page for each one
 export async function getStaticPaths() {
@@ -26,7 +27,7 @@ const title = product.data.name;
 
         <img
           class="divider"
-          src={product.data.image}
+          src={product.data.images.primaryLarge}
           alt="Marmot Ajax tent"
         />
 

@@ -19,6 +19,11 @@ async function addToCartHandler(e: Event) {
     const product = await findProductById(target.dataset.id);
     addProductToCart(product);
   }
+  const cartIcon = document.querySelector('.cart');
+  cartIcon?.classList.add('animating');
+  cartIcon?.addEventListener('animationend', () => {
+    cartIcon.classList.remove('animating');
+  });
 }
 
 // add listener to Add to Cart button
