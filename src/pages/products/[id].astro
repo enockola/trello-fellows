@@ -35,9 +35,10 @@ const title = product.data.name;
 
         <p class="product__color">{product.data.colorName}</p>
 
-        <p class="product__description">
-          {product.data.descriptionHtmlSimple}
-        </p>
+        <div
+          class="product__description"
+          set:html={product.data.descriptionHtmlSimple}
+        />
 
         <div class="product-detail__add">
           <button id="addToCart" data-id={product.data.id}>Add to Cart</button>
