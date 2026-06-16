@@ -46,3 +46,25 @@ export function openUserMenu(selector:string) {
     });
   });
 }
+
+export function getParam(param:string) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const value = urlParams.get(param)
+
+  return value;
+  
+}
+
+export function renderCartCount() {
+  const cartCountElement = document.querySelector('.cart-item-count');
+  const cartItems = getLocalStorage("so-cart");
+  if (cartCountElement) {
+    if (cartItems) {
+      cartCountElement.innerHTML = cartItems.length;
+    }
+    else {
+      cartCountElement.innerHTML = '0';
+    }
+  }
+}

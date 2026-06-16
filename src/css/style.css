@@ -296,3 +296,46 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
+.category-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  a {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+.cart-item-count {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  margin: 0;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50px;
+  font-size: 15px;
+  padding: 5px;
+}
+
+@keyframes shimmy {
+  0% {
+
+  }
+  20% {
+
+  }
+  40% {
+
+  }
+  60% {
+
+  }
+  80% {
+
+  }
+  100% {
+    
+  }
+}
