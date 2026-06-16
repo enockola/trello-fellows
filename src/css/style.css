@@ -319,23 +319,29 @@ footer {
   padding: 5px;
 }
 
+.cart.animating {
+  animation-name: shimmy;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
 @keyframes shimmy {
   0% {
-
+    rotate: 0deg;
   }
   20% {
-
+    rotate: 10deg;
   }
   40% {
-
+    rotate: -10deg;
   }
   60% {
-
+    rotate: 10deg;
   }
   80% {
-
+    rotate: -10deg;
   }
   100% {
-    
+    rotate: 0deg;
   }
 }

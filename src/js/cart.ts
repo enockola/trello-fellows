@@ -3,9 +3,11 @@ import type { Product } from "./types.mjs";
 
 function renderCartContents() {
   const cartItems = getLocalStorage("so-cart");
-  const htmlItems = cartItems.map((item: Product) => cartItemTemplate(item));
-  const listEl = document.querySelector(".product-list");
-  if (listEl) listEl.innerHTML = htmlItems.join("");
+  if (cartItems) {
+    const htmlItems = cartItems.map((item: Product) => cartItemTemplate(item));
+    const listEl = document.querySelector(".product-list");
+    if (listEl) listEl.innerHTML = htmlItems.join("");
+  }
 }
 
 function cartItemTemplate(item: Product) {
