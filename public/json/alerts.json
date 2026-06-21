@@ -1,0 +1,12 @@
+[
+  {
+    "message": "This is a test alert.",
+    "color": "#155724",
+    "backgroundColor": "#d4edda"
+  },
+  {
+    "message": "This is a test alert.",
+    "color": "#856404",
+    "backgroundColor": "#fff3cd"
+  }
+]

@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import AlertList from '../../src/components/AlertList.svelte';
 const title = "Home";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -7,6 +8,7 @@ const title = "Home";
 ---
 
 <Layout title={title}>
+  <AlertList client:load />
   <div class="hero">
     <img
       src="../images/banner-sm.jpg"
