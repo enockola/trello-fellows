@@ -8,7 +8,21 @@ function addProductToCart(product: Product) {
   if (!currentCart) {
     currentCart = [];
   }
-  currentCart.push(product);
+
+  const existingItem = currentCart.find(
+    (item: Product & {quantity?: number}) => item.id === product.id
+
+  );
+
+  if (existingItem) {
+    existingItem.quantity = (existingItem.quantity || 1) + 1;
+  }
+
+  else{
+    currentCart.push({
+      ...product, quantity: 1
+    });
+  }
   setLocalStorage("so-cart", currentCart);
   renderCartCount();
 }
